@@ -36,7 +36,7 @@ body:
 
     file : selected jpeg file
 
-The jpg file you send will be saved, then used to generate a predictions.jpg file which displays the YOLO predictions.
+The png file you send will be saved, then used to generate a predictions.jpg file which displays the YOLO predictions.
 
 
 The dataset for the pytorch model was not included in the repository in order to save space.
