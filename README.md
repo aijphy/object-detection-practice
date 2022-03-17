@@ -13,9 +13,12 @@ copy or clone the localserve.py file
 
 git clone https://github.com/fmacrae/YOLO-on-Lambda or just the unzip the darknet.zip file
 
+chmod +x darknet
+
 pip install fastapi uvicorn aiofiles jinja2 pillow python-multipart
 
 wget https://pjreddie.com/media/files/yolov3.weights
+
 mv yolov3.weights data/
 
 uvicorn localserve:app
