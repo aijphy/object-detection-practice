@@ -38,8 +38,12 @@ body:
 
 The png file you send will be saved, then used to generate a predictions.jpg file which displays the YOLO predictions.
 
+A Dockerfile and requirements.txt file were also included to make a docker image that contains the uvicorn server.
+
 
 The dataset for the pytorch model was not included in the repository in order to save space.
 The dataset can be downloaded from:
 https://www.kaggle.com/sixhky/open-images-bus-trucks
-unzip the file in a separe directory (../open-images-bus-trucks/) to running the training module. Change the path in IMAGE_ROOT and DF_RAW if you choose a different directory name or location.
+unzip the file in a separate directory (../open-images-bus-trucks/) to running the training module. Change the path in IMAGE_ROOT and DF_RAW if you choose a different directory name or location.
+
+
