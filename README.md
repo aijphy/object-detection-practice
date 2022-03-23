@@ -36,6 +36,19 @@ docker build -t 'name':latest .
 
 docker run -p 8000:8000 'name':latest
 
+
+To run with kubernetes via minikube:
+minikube start
+
+eval $(minikube docker-env)
+
+docker build -t localserve .
+
+kubectl apply -f kubernetes/service.yaml
+kubectl apply -f kubernetes/deployment.yaml
+kubectl apply -f kubernetes/ingress.yml
+
+
 Notes:
 The dataset for the pytorch model was not included in the repository in order to save space.
 The dataset can be downloaded from:
