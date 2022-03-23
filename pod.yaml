@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: client-pod
+spec:
+  containers:
+    - name: client
+      image: localserve
+      imagePullPolicy: Never
+      ports:
+        - containerPort: 8000
