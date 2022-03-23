@@ -7,23 +7,13 @@ accessible via a POST request with an image body, and return an image with the o
 
 I use a readily available YOLO model https://github.com/fmacrae/YOLO-on-Lambda. The repo is already designed to run on Lambda. I have created a localserve.py file to allow the model to run on a local server.
 
-In order to run the model on a local server:
+In order to run the model as a server:
 
-copy or clone the localserve.py file
-
-git clone https://github.com/fmacrae/YOLO-on-Lambda or just the unzip the darknet.zip file
-
-chmod +x darknet
-
-pip install fastapi uvicorn aiofiles jinja2 pillow python-multipart
-
-wget https://pjreddie.com/media/files/yolov3.weights
-
-mv yolov3.weights data/
+run setup.sh
 
 uvicorn localserve:app
 
-use postman or curl: 
+use postman or curl to access the api: 
 (url example: http://127.0.0.1:8000/predict)
 
 headers: 
@@ -40,7 +30,13 @@ The png file you send will be saved, then used to generate a predictions.jpg fil
 
 A Dockerfile and requirements.txt file were also included to make a docker image that contains the uvicorn server.
 
+The docker image can be built and ran after running setup.sh with:
 
+docker build -t 'name':latest .
+
+docker run -p 8000:8000 'name':latest
+
+Notes:
 The dataset for the pytorch model was not included in the repository in order to save space.
 The dataset can be downloaded from:
 https://www.kaggle.com/sixhky/open-images-bus-trucks
