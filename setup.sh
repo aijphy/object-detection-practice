@@ -3,7 +3,7 @@
 git clone https://github.com/fmacrae/YOLO-on-Lambda
 rm YOLO-on-Lambda/LICENSE*
 rm YOLO-on-Lambda/README.md
-rm YOLO-on-Lambda/serverless.yaml
+rm YOLO-on-Lambda/serverless.yml
 rm YOLO-on-Lambda/service.py
 mv YOLO-on-Lambda/* .
 rm -rf YOLO-on-Lambda

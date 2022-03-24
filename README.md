@@ -36,6 +36,32 @@ docker build -t 'name':latest .
 
 docker run -p 8000:8000 'name':latest
 
+
+To run with kubernetes via minikube:
+minikube start
+
+eval $(minikube docker-env)
+
+docker build -t localserve .
+
+kubectl create -f kubenetes/pod.yaml
+
+  to test pod:
+
+  kubectl port-forward client-pod 8000:80
+
+  can test in browser with http://localhost:8000/
+
+kubectl create -f kubernetes/nodeportservice.yaml
+
+  kubectl port-forward service/client-node-port 8000:80
+  
+  can test in browser with http://localhost:8000/
+
+
+Because it is using Docker, it does not expose the minikube ip to localhost, so port-forwarding is the easiest way to get around it locally. Can deploy later.
+
+
 Notes:
 The dataset for the pytorch model was not included in the repository in order to save space.
 The dataset can be downloaded from:
