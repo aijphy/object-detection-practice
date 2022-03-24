@@ -2,10 +2,12 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: client-pod
+  labels:
+    component: web
 spec:
   containers:
     - name: client
       image: localserve
-      imagePullPolicy: Never
+      imagePullPolicy: IfNotPresent
       ports:
-        - containerPort: 8000
+        - containerPort: 80

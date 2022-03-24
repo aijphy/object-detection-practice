@@ -44,9 +44,22 @@ eval $(minikube docker-env)
 
 docker build -t localserve .
 
-kubectl apply -f kubernetes/service.yaml
-kubectl apply -f kubernetes/deployment.yaml
-kubectl apply -f kubernetes/ingress.yml
+kubectl create -f kubenetes/pod.yaml
+
+  to test pod:
+
+  kubectl port-forward client-pod 8000:80
+
+  can test in browser with http://localhost:8000/
+
+kubectl create -f kubernetes/nodeportservice.yaml
+
+  kubectl port-forward service/client-node-port 8000:80
+  
+  can test in browser with http://localhost:8000/
+
+
+Because it is using Docker, it does not expose the minikube ip to localhost, so port-forwarding is the easiest way to get around it locally. Can deploy later.
 
 
 Notes:
